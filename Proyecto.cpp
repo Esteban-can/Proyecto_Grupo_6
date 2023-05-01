@@ -6,18 +6,17 @@ struct Palabra
 	int op;
 	char nomb[50];
 	char def[150];
+	char tra[150];
 };
 
 void leer();
 void crear();
-void Actualizar();
 void Borrar();
 main()
 {
 	leer();
 	crear();
-    Actualizar();
-    Borrar();
+	Borrar();
 	system ("pause");
 }
 void leer()
@@ -31,10 +30,6 @@ void leer()
 	Palabra palabra;
 	int id=0;
 	fread(&palabra,sizeof(Palabra),1,archivo);
-	cout<<"Opciones: "<<endl;
-	cout<<"1.Crear: "<<endl;
-	cout<<"2.Actualizar: "<<endl;
-	cout<<"3.Borrar: "<<endl;
 	do
 	{
 		cout<<id<<"|"<<palabra.nomb<<endl;
@@ -53,11 +48,16 @@ Palabra palabra;
 do
 {
 	fflush(stdin);
-	cin.ignore();
 	cout<<"Ingrese Palabra: ";
-	cin.getline(palabra.nomb,50);
-
+	cin.getline(palabra.nomb,150);
+	cout<<"Ingrese Traduccion: ";
+	cin.getline(palabra.tra,150);
+	cout<<"Ingrese Definicion: ";
+	cin.getline(palabra.def,150);
+	
+	
 	fwrite(&palabra,sizeof(Palabra),1,archivo);
+	
 	cout <<"Desea ingresar otra palabra (s/n):";
 	cin>>res;
 }while(res == 's'|| res == 'S');
@@ -66,23 +66,7 @@ leer();
 	
 	system ("pause");
 } 
-void Actualizar()
-{
-FILE* archivo = fopen(nombre_archivo,"r+b"); 
-Palabra palabra;
-	int id=0;
-	cout<<"Ingrese el Numero  que desea Modificar:";
-	cin>>id;
-	fseek(archivo,id * sizeof(Palabra),SEEK_SET); 
-	cout<<"Ingrese Palabra: ";
-	cin.getline(palabra.nomb,50);
-	fwrite(&palabra,sizeof(Palabra),1,archivo);
-	cout <<"Desea ingresar otra palabra (s/n):";
-	
 
-fclose(archivo);
-leer();	
-}
 void Borrar()
 {
 	
@@ -112,5 +96,27 @@ void Borrar()
 		 }
 		 fclose(archivo);
 	fclose(archivo_temp);
+leer();	
+}
+void Actualizar()
+{
+FILE* archivo = fopen(nombre_archivo,"r+b"); 
+Palabra palabra;
+	int id=0;
+	cout<<"Ingrese el ID que desea Modificar:";
+	cin>>id;
+	fseek(archivo,id * sizeof(Palabra),SEEK_SET); 
+	cout<<"Ingrese Palabra: ";
+	cin.get(palabra.nomb,150);
+	cout<<"Ingrese Traduccion: ";
+	cin.getline(palabra.tra,150);
+	cout<<"Ingrese Definicion: ";
+	cin.getline(palabra.def,150);
+		
+	fwrite(&palabra,sizeof(Palabra),1,archivo);
+	cout <<"Desea ingresar otro estudiante (s/n):";
+	
+
+fclose(archivo);
 leer();	
 }
