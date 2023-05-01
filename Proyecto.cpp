@@ -11,13 +11,51 @@ struct Palabra
 
 void leer();
 void crear();
+void Actualizar();
 void Borrar();
+void Menu();
+
 main()
 {
-	leer();
-	crear();
-	Borrar();
-	system ("pause");
+	Menu();	
+   
+    scanf("");
+    return(0);
+}
+void Menu()
+{
+	int op;
+	do 
+	{
+		cout<<"Menu:"<<endl;
+		cout<<"1. Leer"<<endl;
+		cout<<"2. Crear"<<endl;
+		cout<<"3. Actualizar"<<endl;
+		cout<<"4. Borrar"<<endl;
+		cout<<"5. Salir"<<endl;
+		cin>>op;
+			switch(op)
+			{
+			case 1: leer();
+			system("pause");
+			break;
+			
+			case 2: crear();
+			system("pause");
+			break;
+			
+			case 3:Actualizar();
+			system("pause");
+			break;			    
+		
+	    	case 4: Borrar();
+	    	system("pause");
+	    	break;
+		
+	}
+	system("cls");
+	
+	}while(op!=5);
 }
 void leer()
 {
