@@ -38,6 +38,29 @@ void comparar(string texto_2, int contador){
 	}
 }
 
+void identificar_palabra(string prueba, int cont){
+	string pal_sep;
+	int line, espacios = 0, i = 0, pinicio, pfin, pmed=0;
+	
+	line = prueba.length();
+	prueba = " " + prueba;
+	
+	while(i<=line){
+		if(prueba.substr(i,1) == " "){
+			pfin = i;
+			if(i>0){
+				pal_sep = prueba.substr(pinicio+1,pfin-(pinicio+1));
+				comparar(pal_sep, cont);
+			}
+			pinicio = pfin;
+		}
+		if(i == line){
+			pal_sep = prueba.substr(pfin+1,line);
+			comparar(pal_sep, cont);
+		}
+		i++;
+	}
+}
 
 
 void ingreso_del_texto(){
