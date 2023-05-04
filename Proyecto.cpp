@@ -37,3 +37,47 @@ void comparar(string texto_2, int contador){
 		lineas_temp[contador] = lineas_temp[contador] + ' ' + texto_2;
 	}
 }
+
+
+
+void ingreso_del_texto(){
+	string *lineas;
+	lineas = new string [lineas_total];
+	int juls, i;
+	
+	cout<<"|----------------------------Su Codigo Aqui-------------------------------|\n\n"<<endl;
+
+	cin.ignore();
+	for(i=0;i<lineas_total;i++){
+		lineas_temp[i] = "";
+		cout<<i+1<<"| ";
+		getline(cin, lineas[i]);
+		identificar_palabra(lineas[i], i);
+		if(lineas[i] == "Fin."){
+			juls = i;
+			i = 501;
+		}
+	}
+	
+	for(i=0;i<=100;i+=10){
+		if(i<40){
+			system("color 04");
+		}else if(i<70){
+			system("color 06");
+		}else if(i<101){
+			system("color 02");
+		}
+		system("cls");
+		cout<<"Traduciendo %"<<i;
+	}
+	
+	system("cls");
+	cout<<"|-------------------------------Resultado---------------------------------|\n\n"<<endl;
+	for(i=0;i<juls;i++){
+		cout<<i+1<<"| "<<lineas_temp[i]<<endl;
+		Sleep(70);
+	}
+	
+	//delete lineas;
+	//delete lineas_temp;
+};
