@@ -68,9 +68,11 @@ void leer()
 	Palabra palabra;
 	int id=0;
 	fread(&palabra,sizeof(Palabra),1,archivo);
+	cout<<"___________________________________________________"<<endl;
+	cout<<"id"<<"|"<<"Palabra"<<"|"<<"Definicion"<<"|"<<"Traduccion"<<"|"<<endl;
 	do
 	{
-		cout<<id<<"|"<<palabra.nomb<<endl;
+		cout<<id<<" | "<<palabra.nomb<<" | "<<palabra.def<<" | "<<palabra.tra<<endl;
 		fread(&palabra,sizeof(Palabra),1,archivo);
 	id+=1;	
 	}while (feof(archivo)==0);
