@@ -25,6 +25,33 @@ void crear_archivo(){
 		archivo = fopen((palabras.txt,"w+b");	
 	}
 }
+void leer(int buscar){
+	//Si buscar es igual a "1" la función buscara un item; Si buscar es distinto a "1" mostrara todos los items
+	FILE *archivo = fopen(palabras.txt, "rb");
+	//palabra pal;
+	
+	int id=1, bus;
+	string kam;
+	
+	fread(&pal,sizeof(palabra),1,archivo);
+	if(buscar == 1){
+		cout<<"Ingrese el ID del objeto a buscar: ";
+		cin>>bus;
+		cout<<"\n\n";
+	}
 
+	do{	
+		if(buscar == 1 && id == bus || buscar == 0){
+			kam = pal.nombre;
+			if(kam != "--"){
+				cout<<"ID: "<<id<<"\nNombre: "<<pal.nombre<<"\nTraduccion: "<<pal.traduccion<<"\nSignificado: "<<pal.significado<<endl<<endl;
+			}
+		}
+		fread(&pal,sizeof(palabra),1,archivo);
+		id += 1;
+	}while(feof(archivo)==0);
+	
+	fclose(archivo);
+}
 
 
