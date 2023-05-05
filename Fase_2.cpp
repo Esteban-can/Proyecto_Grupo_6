@@ -54,4 +54,21 @@ void leer(int buscar){
 	fclose(archivo);
 }
 
+//Guarda los valores a remplazar en una variable
+void ayuda_remplazar(int help){
+	FILE *archivo = fopen(palabrastxt, "rb");
+	//palabra pal;
+	int id = 1;
+	fread(&pal,sizeof(palabra),1,archivo);
+	do{	
+		if(id == help){
+			nombre_tem = pal.nombre;
+			traduccion_tem = pal.traduccion;
+			significado_tem = pal.significado;
+		}
+		fread(&pal,sizeof(palabra),1,archivo);
+		id += 1;
+	}while(feof(archivo)==0);
+}
+
 
