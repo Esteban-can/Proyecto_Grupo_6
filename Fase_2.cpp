@@ -183,7 +183,36 @@ void menu(){
 				}else if(inp_dicc == 'e' || inp_dicc == 'E'){
 					borra_ese = 1;
 					ingreso(0);
+  
+        }else{
+					cout<<"Ingresa un valor correcto la proxima vez.";
+				}
+				break;
+			}
+			case 3:{
+				cout<<"|----------------------------Mostrar Palabras-----------------------------|\n\n"<<endl;
+				cout<<"Desea mostrar todo o buscar algo en especifico (t/e)?.. ";
+				cin>>inp_dicc;
+				if(inp_dicc == 't' || inp_dicc == 'T'){
+					leer(0);
+				}else if(inp_dicc == 'e' || inp_dicc == 'E'){
+					leer(1);
+				}else{
+					cout<<"Ingresa un valor correcto la proxima vez.";
+				}
+				break;
+			}
+		}
+		system("pause");
+		system("cls");
+	}while(inp_gen !=4);
+}
 
+int main(){
+	crear_archivo();
+	menu();
+
+}
 
 
 
