@@ -26,7 +26,7 @@ void crear_archivo(){
 	}
 }
 void leer(int buscar){
-	//Si buscar es igual a "1" la funci�n buscara un item; Si buscar es distinto a "1" mostrara todos los items
+	//Si buscar es igual a "1" la funci�n buscara un item; Si buscar es distinto a "1" mostrara todos los items
 	FILE *archivo = fopen(palabras.txt, "rb");
 	//palabra pal;
 	
@@ -72,3 +72,23 @@ void ayuda_remplazar(int help){
 }
 
 
+void ingreso(int cremo){
+	//Si cremo es igual a "1" la función agregara valores; Si cremo es distingo a "1" la función modificara valores
+	//palabra pal;
+	FILE* archivo = fopen(nombre_archivo,"ab");	
+	string str_nombre, str_traduccion, str_significado;
+
+	fflush(stdin);
+	if (cremo == 1){
+		cout<<"¡--Ingreso de valores--!"<<endl<<endl;
+	}else{
+		fclose(archivo);
+		FILE* archivo = fopen(nombre_archivo,"r+b");
+		int id;
+		//Si no se quiere modificar un campo colocar "0"
+		cout<<"Ingrese el ID que desea Modificar: ";
+		cin>>id;
+		fseek(archivo,(id-1) * sizeof(archivo),SEEK_SET);
+		ayuda_remplazar(id);
+		cin.ignore();
+	}
