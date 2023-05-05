@@ -130,3 +130,26 @@ void ingreso(int cremo){
 		
 		//leer(0);
 	}
+	
+	fwrite(&pal,sizeof(palabra),1,archivo);
+	fclose(archivo);
+}
+	
+	void bannermotd(){
+	cout<<"-----ALUMNOS:-----"<<endl;
+	cout<<"Daniel Alejandro González Juarez       1290-22-4469"<<endl;
+	cout<<"Pedro José Manuel Galindo Hernández    1290-22-9309"<<endl;
+	cout<<"Juan Esteban Can Lopez                 1290-22-10376"<<endl;
+	cout<<"Jorge José Hernández FLores            1290-22-799"<<endl;
+	cout<<"Mauro Francisco Marroquin Azurdia      1290-22-3436 "<<endl;
+	cout<<"Pablo Rafael ALvarez Farel             1290-22-3226"<<endl;
+	
+    
+}
+
+
+
+
+
+
+
