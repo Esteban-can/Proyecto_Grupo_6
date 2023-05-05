@@ -147,7 +147,42 @@ void ingreso(int cremo){
     
 }
 
-
+void menu(){
+	system("color 02");
+	int inp_gen;
+	char inp_dicc;
+		
+	do{
+		bannermotd();
+		cout<<"|-------------------------------------------------------------------------|"<<endl;
+		cout<<"|Entrar al traductor                                                    1 |"<<endl;
+		cout<<"|-------------------------------------------------------------------------|"<<endl;
+		cout<<"|Modificar diccionario                                                  2 |"<<endl;
+		cout<<"|-------------------------------------------------------------------------|"<<endl;
+		cout<<"|Mostrar palabras                                                       3 |"<<endl;
+		cout<<"|-------------------------------------------------------------------------|"<<endl;
+		cout<<"|Salir                                                                  4 |"<<endl;
+		cout<<"|-------------------------------------------------------------------------|"<<endl<<endl;
+		cout<<"Que deseas hacer? ";
+		cin>>inp_gen;
+		system("cls");
+		switch (inp_gen){
+			case 1:{
+				ingreso_del_texto();
+				break;
+			}
+			case 2:{
+				borra_ese = 0;
+				cout<<"|--------------------------Modificar diccionario--------------------------|\n\n"<<endl;
+				cout<<"Desea modificar, agregar o eliminar (m/a/e)?.. ";
+				cin>>inp_dicc;
+				if(inp_dicc == 'a' || inp_dicc == 'A'){
+					ingreso(1);
+				}else if(inp_dicc == 'm' || inp_dicc == 'M'){
+					ingreso(0);
+				}else if(inp_dicc == 'e' || inp_dicc == 'E'){
+					borra_ese = 1;
+					ingreso(0);
 
 
 
