@@ -20,7 +20,7 @@ struct palabra_2{
 palabra_2 pal_2;
 
 void comparar(string texto_2, int contador){
-	FILE *archivo = fopen(archivo.dat, "rb");
+	FILE *archivo = fopen(nombre_archivo, "rb");
 	int id=1, encontrado=0;
 	
 	fread(&pal_2,sizeof(palabra_2),1,archivo);
@@ -37,8 +37,7 @@ void comparar(string texto_2, int contador){
 		lineas_temp[contador] = lineas_temp[contador] + ' ' + texto_2;
 	}
 }
-
-void identificar_palabra(string prueba, int cont){
+void identificar_palabra(string prueba, int cont){//Daniel*
 	string pal_sep;
 	int line, espacios = 0, i = 0, pinicio, pfin, pmed=0;
 	
@@ -61,14 +60,15 @@ void identificar_palabra(string prueba, int cont){
 		i++;
 	}
 }
-
-
+//Daniel**
+//Jorge*
 void ingreso_del_texto(){
 	string *lineas;
 	lineas = new string [lineas_total];
 	int juls, i;
 	
 	cout<<"|----------------------------Su Codigo Aqui-------------------------------|\n\n"<<endl;
+	cout<<"|----------------------------Ingrese 'Fin.' para traducir-------------------------------|\n\n"<<endl;
 
 	cin.ignore();
 	for(i=0;i<lineas_total;i++){
@@ -84,11 +84,11 @@ void ingreso_del_texto(){
 	
 	for(i=0;i<=100;i+=10){
 		if(i<40){
-			system("color 04");
+			system("color 09");
 		}else if(i<70){
-			system("color 06");
+			system("color 09");
 		}else if(i<101){
-			system("color 02");
+			system("color 09");
 		}
 		system("cls");
 		cout<<"Traduciendo %"<<i;
@@ -98,9 +98,6 @@ void ingreso_del_texto(){
 	cout<<"|-------------------------------Resultado---------------------------------|\n\n"<<endl;
 	for(i=0;i<juls;i++){
 		cout<<i+1<<"| "<<lineas_temp[i]<<endl;
-		Sleep(70);
-	}
 	
-	//delete lineas;
-	//delete lineas_temp;
-};
+	}
+	};

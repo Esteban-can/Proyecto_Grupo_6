@@ -5,24 +5,24 @@ using namespace std;
 
 //const char *nombre_archivo = "archivo.dat";
 
-struct palabra_2{
-	char nombre_2[50];
-	char traduccion_2[50];
-	char significado_2[150];
+struct palabra{
+	char nombre[50];
+	char traduccion[50];
+	char significado[150];
 };
 
-palabra_2 pal_2;
+palabra pal;
 
 //Variables que ayudaran a no modificar un campo en especifico
-string nombre_2tem, traduccion_2tem, significado2_tem;
+string nombre_tem, traduccion_tem, significado_tem;
 
 //Variable de improvisto para eliminar :v
 int borra_ese;
 
 void crear_archivo(){
-	FILE *palabra = fopen((nombre_archivo, "r+b");
+	FILE *palabra = fopen(nombre_archivo, "r+b");
 	if (!palabra){
-		palabra = fopen((nombre_archivo,"w+b");	
+		palabra = fopen(nombre_archivo,"w+b");	
 	}
 }
 void leer(int buscar){
@@ -137,10 +137,10 @@ void ingreso(int cremo){
 	
 	void bannermotd(){
 	cout<<"-----ALUMNOS:-----"<<endl;
-	cout<<"Daniel Alejandro González Juarez       1290-22-4469"<<endl;
-	cout<<"Pedro José Manuel Galindo Hernández    1290-22-9309"<<endl;
+	cout<<"Daniel Alejandro Gonzalez Juarez       1290-22-4469"<<endl;
+	cout<<"Pedro Jose Manuel Galindo Hernandez    1290-22-9309"<<endl;
 	cout<<"Juan Esteban Can Lopez                 1290-22-10376"<<endl;
-	cout<<"Jorge José Hernández FLores            1290-22-799"<<endl;
+	cout<<"Jorge Jose Hernandez FLores            1290-22-799"<<endl;
 	cout<<"Mauro Francisco Marroquin Azurdia      1290-22-3436 "<<endl;
 	cout<<"Pablo Rafael ALvarez Farel             1290-22-3226"<<endl;
 	
@@ -148,7 +148,7 @@ void ingreso(int cremo){
 }
 
 void menu(){
-	system("color 02");
+	system("color 09");
 	int inp_gen;
 	char inp_dicc;
 		
